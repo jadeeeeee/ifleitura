@@ -1,0 +1,253 @@
+/* ----- index ----- */
+*{
+    margin: 0 auto;
+
+}
+.cabeçalho{
+    width: 100vw;
+    height: 15vh;
+    margin-bottom: 4vh;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: black 1.5px solid;
+}
+
+.titulo{
+    font-family:sans-serif; /*mudar a fonte*/
+    color: black;
+    font-size: 10vh;
+    margin-top: 2vh;
+    margin-left: 3vw;
+}
+
+ul{
+    margin-top: 6vh;
+    height: 6vh;
+    list-style-type: none;
+}
+
+li{
+    display: inline;
+}
+
+li a{
+    display: inline;
+    margin-right: 3vw;
+    color:black;
+    padding: 10px;
+    font-family: "sans-serif";
+    font-size: 3vh;
+    text-decoration: none;
+}
+
+li a:hover{
+    color: gray;
+}
+
+/* ----- home ----- */
+
+.conteudo{
+    height: 30vh;
+    
+    margin-bottom: 5.5vh;
+    margin-right: 0vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.conteudo .livro{
+    height: 30vh;
+    width: 11vw;
+    text-decoration: none;
+    color: black;
+    overflow: hidden;
+}
+
+.conteudo .livro:hover{
+    border: 1px groove grey;
+}
+
+
+.conteudo .livro .img-home{
+    width: 11vw;
+    height: 31vh;
+}
+
+h4{
+    margin-left: 1.5vw;
+    border-bottom:black solid 1px;
+}
+
+h4:hover{
+    opacity: .5;
+}
+
+/* ----- páginas dos livros ----- */
+
+.livro-pag{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.livro-pag .conteudo-livro{
+    width: 25vw;
+    height: 74vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.livro-pag .conteudo-livro .sinopse{
+    width: 20vw;
+    height: 23vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    border: 1px black solid;
+    border-radius: 20px;
+    color: gray;
+    text-indent: 1vw;
+    padding-top: 1.5vh;
+}
+
+.livro-pag .conteudo-livro .capa-livro{
+    width: 11vw;
+    height: 31vh;
+}
+
+.livro-pag .resenha{
+    width: 38vw;
+    height: 74vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.livro-pag .resenha .resenha-input{
+    width: 20vw;
+    height: 40vh;
+    border: 1px black solid;
+    border-radius: 20px;
+    color: gray;
+    text-indent: 1vw;
+    padding-top: 1.5vh;
+}
+
+.livro-pag .resenha .resenha-input:focus{
+    outline: none;
+    border: 1px solid gray;
+}
+
+.livro-pag .resenha .resenha-input::placeholder{
+    text-align: start;
+    margin-top: 0vh;
+}
+
+.livro-pag .resenha .submit-resenha{
+    width: 20vw;
+    height: 5vh;
+    margin-top: 3vh;
+    background-color: black;
+    font-family: sans-serif;
+    color: white;  
+    border-radius: 12px;
+    border: solid black;
+}
+
+.livro-pag .resenha .submit-resenha:hover{
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+
+/* ----- cadastro ----- */
+.form{
+    width: 30vw;
+    height: 60vh;
+    margin-left: 35vw;
+    margin-right: 35vw;
+    border: .9 double black 12px;
+    border-radius: 20px;
+    text-align: center;
+ 
+}
+
+
+
+/* ----- login ----- */
+
+.login{
+    width: 50vw;
+    height: 45vh;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    position: relative;
+    text-align: center;
+
+    /* border: double black 12px;
+    border-radius: 20px; */
+
+}
+
+.inputs{
+    text-align: center;
+    border-radius: 12px;
+    border: solid black;
+    width: 15vw;
+    height: 5vh;
+    background-color: white;
+    font-family: sans-serif;
+}
+
+.submit{
+    width: 15vw;
+    height: 5vh;
+    background-color: black;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    border-radius: 12px;
+    border: solid black;
+}
+
+.submit:hover{
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+#index{
+    width: 50vw;
+    height: 25vh;
+    margin-top: 25vh;
+    margin-bottom: 20vh;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    position: relative;
+    text-align: center;
+    border: solid black 3px;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-track
+{
+    border: 5px solid var(--bg);
+    border-color: transparent;
+    background-color: var(--bg);
+}
+
+::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: #dfe6e9;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: var(--acc);
+    border-radius: 10px;
+}

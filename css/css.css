@@ -44,6 +44,36 @@ li a:hover{
     color: gray;
 }
 
+.conteudo-index{
+    display: flex;
+    margin: 1vw;
+}
+
+.conteudo-index .nome{
+    width: 50vw;
+    height: 25vh;
+    margin-right: 1vw;
+}
+
+.conteudo-index .textin{
+    width: 50vw;
+    height: 25vh;
+    margin-left: 1vw;
+    text-align: center;
+    border: solid black 3px;
+    border-radius: 12px;
+    flex-direction: column;
+}
+
+.index-menu{
+    width: 100vw;
+    height: 15vh;
+    margin-bottom: 4vh;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: black 1.5px solid;
+}
+
 /* ----- home ----- */
 
 .conteudo{
@@ -162,6 +192,39 @@ h4:hover{
     cursor: pointer;
 }
 
+.livro-pag .resenha .nota {
+    appearance: none;
+    width: 10vw;
+    height: 2vh;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .nota:hover {
+    opacity: 1;
+  }
+  
+  .nota::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2vw;
+    height: 4vh;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+  }
+  
+  .nota::-moz-range-thumb {
+    width: 25vw;
+    height: 25vh;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
 
 /* ----- cadastro ----- */
 .form{
@@ -218,19 +281,6 @@ h4:hover{
 .submit:hover{
     opacity: 0.2;
     cursor: pointer;
-}
-
-#index{
-    width: 50vw;
-    height: 25vh;
-    margin-top: 25vh;
-    margin-bottom: 20vh;
-    margin-left: 25vw;
-    margin-right: 25vw;
-    position: relative;
-    text-align: center;
-    border: solid black 3px;
-    border-radius: 12px;
 }
 
 ::-webkit-scrollbar-track

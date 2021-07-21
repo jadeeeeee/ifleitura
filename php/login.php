@@ -37,7 +37,7 @@ if (isset($_POST['butao'])) {
             }
         }
         else { //se não
-            $erros[] = "<li> Hum.. Este usuário não existe ainda. </li>";
+            $erros[] = "<li> Hum.. Este usuário não existe ainda. Que tal cadastró-lo? </li>";
         }
     }
 }

@@ -1,5 +1,16 @@
 <?php
-include('../../php/conexao.php');
+include('../conexao.php');
+session_start();
+
+if (!isset($_SESSION['logado'])) {
+    header('Location:../login.php');
+}
+
+//
+$id = $_SESSION['id-usuario'];
+$query = "SELECT * FROM usuario WHERE id_usuario = '$id'";
+$resultado = mysqli_query($conexao, $query);
+$dados = mysqli_fetch_array($resultado);
 
 ?>
 
@@ -20,9 +31,8 @@ include('../../php/conexao.php');
     <h1 class="titulo"> IF LEITURA </h1>
     <ul>
     <li> <a href="../home.php"> LIVROS </a> </li>
-    <li > <a href="../cadastroF.php"> CADASTRO </a> </li>
-    <li> <a href="../loginF.php"> LOGIN </a> </li>
-    <li> <a href="../index.php">SAIR</a> </li>
+    <li> <a href="../logout.php">SAIR</a> </li>
+    <p> <?php echo $dados['nome']; ?> </p>
     </ul>
 </div>
 
@@ -38,27 +48,43 @@ include('../../php/conexao.php');
     <div class="resenha">
         <h2> Adicione sua resenha/avaliação sobre essa obra! </h2> <br>
         <form method="POST" action="">
-            <input type="text" name="resenha" class="resenha-input" placeholder="E aí, traiu ou não traiu?"> <br>
-            
+            <textarea name=resenha class="resenha-input" placeholder="E aí, traiu ou não traiu?"></textarea><br>
             <label for="nota"> Classifique a obra de 1 a 5: </label>
-            <input type="range" name="nota" class="nota" min="1" max="5"> <br>
-            
-            <input type="submit" value="Enviar" class="submit-resenha">
+            <input type="range" name="nota" class="nota" min="1" max="10"> <br>
+            <input type="hidden" name="id_livro" value="01001">
+            <button type="submit" name="Enviar" class="submit-resenha"> Enviar </button><br>
+            <button type=reset value=Limpar class="submit-resenha"> Limpar </button>
         </form>
     </div>
 </div>
-
+<h3>Resenhas e notas</h3>
 <hr> <br>
 
-<?php 
+<?php
+//form e comentarios
+if (isset($_POST['Enviar'])){
+    $resenha = mysqli_real_escape_string($conexao, $_POST['resenha']);
+    $nota = mysqli_real_escape_string($conexao, $_POST['nota']);
+    $id_livro = mysqli_real_escape_string($conexao, $_POST['id_livro']);
+    
 
-$resenha =  mysqli_real_escape_string($conexao, $_POST['resenha']);
-$nota =  mysqli_real_escape_string($conexao, $_POST['nota']);
+    //insere no bd
+    $query = "INSERT INTO avaliacao(resenha, nota, data, id_livro, id_usuario) VALUES ('$resenha', '$nota', NOW(), '$id_livro', '$id')";
+    mysqli_query($conexao, $query);
+}
 
+$query = "SELECT nome FROM usuario, avaliacao WHERE usuario.id_usuario = avaliacao.id_usuario";
+$executa = mysqli_query($conexao, $query);
+$autor =  mysqli_fetch_array($executa);
 
-echo $resenha, $nota;
+//filtrar o id do livro
+$query1 = "SELECT * FROM avaliacao WHERE id_livro='$id_livro' ORDER BY id desc";
+$executar = mysqli_query($conexao, $query1);
+$exibir = mysqli_fetch_array($executar);
+while($exibir = mysqli_fetch_array($executar)){
+    echo "<div class='comentarios'> Postado por: ", $autor['nome'], "<br> Nota: ", $exibir['nota'], "<br> Resenha: ", $exibir['resenha'],"</br> Data: ", $exibir['data'], "</div> <hr>";
+}
 
 ?>
-
 </body>
 </html>

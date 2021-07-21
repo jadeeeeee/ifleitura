@@ -21,7 +21,6 @@
     </div>
     <div class='index-menu'>
         <ul>
-        <!-- aqui o user só pode entrar logado-->
         <li> <a href="php/home.php"> LIVROS </a> </li>
         <li > <a href="php/cadastro.php"> CADASTRO </a> </li>
         <li> <a href="php/login.php"> LOGIN </a> </li>

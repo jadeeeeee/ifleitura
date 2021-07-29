@@ -1,0 +1,148 @@
+ul{
+    width: 25vw;
+    height: 25vh;
+    margin-top: -19vh;
+    margin-right: 1vw;
+    justify-content: center;
+    float: right;
+    position: relative;
+    list-style-type: none;
+    overflow: hidden;
+    float: inline-start;
+}
+
+li a{
+    display: inline-block;
+    color:white;
+    padding: 10px;
+    font-family: "Arial";
+    font-size: 3vh;
+    text-decoration: none;
+} 
+
+------------------------------------------------------------login
+
+if(empty($_POST['email']) || empty($_POST['senha'])){  
+    header('Location: ../front/loginF.php');
+    exit();
+}
+
+$email = mysqli_real_escape_string($conexao, $_POST['email']);
+$senha = mysqli_real_escape_string($conexao, $_POST['senha']);
+
+$query = "select email from usuario where email = '{$email}' and senha = '{$senha}'";
+$result = mysqli_query($conexao, $query);
+$row = mysqli_num_rows($result);
+
+
+if ($row == 1){
+    $_SESSION['email'] = $email;
+    header('Location: ../front/home.php');
+    exit();
+}
+else {
+    $_SESSION['errado'] = true;
+    header('Location: ../front/loginF.php');
+    exit();
+}
+
+// verificação
+if(!$_SESSION['email']){
+	header('Location: ../front/index.php');
+}
+
+// logout
+session_destroy();
+header('Location: ../front/index.php');
+exit();
+
+-------------------------------------------------------------------
+@media (min-width: 1025px) {
+@media (max-width: 1024px) {
+
+----------------------------cadastro
+
+				$sql = "insert into usuario (nome, idade, email, senha, data) values ('$nome', '$idade', '$email', '$senha', NOW())";
+			
+				if ($conexao->query($sql) === TRUE){
+					$_SESSION['status_cadastro'] = true;
+					header('Location: home.php');
+				}
+			
+				$conexao->close();
+
+--------------------------------------------------------------
+<?php
+
+$nome=$_POST['nome'];
+$email=$_POST['email'];
+$data = date("Y/m/d");           
+$comentario=$_POST['comentario']; 
+if(strlen($_POST['nome'])) #insere somente se no form foi escrito o nome
+{
+    $insert = mysql_query("INSERT INTO tbcomentarios(nome,email,data,comentario) 
+    values('$nome','$email','$data','$comentario')");
+}
+
+$sql = "SELECT * FROM tbcomentarios ORDER BY id desc";
+$executar=mysql_query($sql);
+while( $exibir = mysql_fetch_array($executar)){
+    echo $exibir['data'];
+    echo "</br>";
+    echo $exibir['nome'];
+    echo "</br>";
+    echo $exibir['email'];
+    echo "</br>";
+    echo $exibir['comentario'];
+    echo "</br><hr>";
+}
+?>
+
+--------------------------------------------------- home lista de links de livros
+    <div class="livro"> <!--colocar o id ou uma estrutura de repetição ?id= -->
+    <a href="livros/domcasmurro.php"> <img src="../imgs/domcasmurro.jpg" alt="Dom Casmurro" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/incidenteantares.php"> <img src="../imgs/incidente1.jpg" alt="Incidente em Antares" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/ocortico.php"> <img src="../imgs/cortico.jpg" alt="O Cortiço" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/horadaestrela.php"> <img src="../imgs/ahoradaestrela.jpg" alt="A hora da estrela" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/cidadededeus.php"> <img src="../imgs/cidade.jpg" alt="Cidade de Deus" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/senhora.php"> <img src="../imgs/senhora.jpg" alt="Senhora" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/oalienista.php"> <img src="../imgs/alienista.jpg" alt="O Alienista" class="img-home"> </a>
+    </div>
+</div>
+
+<h4>INTERNACIONAIS</h4> <br>
+<div class='conteudo'>
+    <div class="livro">
+    <a href="livros/cronicasdenarnia.php"> <img src="../imgs/narnia.jpg" alt="As Crônicas de Nárnia" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/admiravelmundonovo.php"> <img src="../imgs/admiravel.jpg" alt="Admirável Mundo Novo" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/orgulhoepreconceito.php"> <img src="../imgs/orgulho.jpg" alt="Orgulho e Preconceito" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/harrypotter.php"> <img src="../imgs/harry.jpg" alt="Harry Potter e a Pedra Filosofal" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/madamebovary.php"> <img src="../imgs/madame.jpg" alt="Madame Bovary" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/coraline.php"> <img src="../imgs/coraline.jpg" alt="Coraline" class="img-home"> </a>
+    </div>
+    <div class="livro">
+    <a href="livros/revolucaodosbichos.php"> <img src="../imgs/bichos.jpg" alt="A Revolução dos Bichos" class="img-home"> </a>
+    </div>
+</div>

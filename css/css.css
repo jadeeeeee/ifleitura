@@ -1,33 +1,49 @@
 /* ----- index ----- */
 *{
     margin: 0 auto;
+    font-family: 'DM Sans', sans-serif;
 
-}
-.cabeçalho{
-    width: 100vw;
-    height: 15vh;
-    margin-bottom: 4vh;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: black 1.5px solid;
 }
 
 .titulo{
-    font-family:sans-serif; /*mudar a fonte*/
     color: black;
-    font-size: 10vh;
-    margin-top: 2vh;
-    margin-left: 3vw;
+    font-size: 14vh;
+    margin-left: 1vw;
+}
+
+#red{
+    color:red;
+    font-size: 15vh;
+    margin-right: 0vw;
+}
+#green{
+    color: green;
+    font-size: 15vh;
+    margin-left: 0vw;
+    margin-right: 0vw;
+}
+
+.subtitulo{
+    color: black;
+    
+}
+
+#logo{
+    width: 10vw;
+    height: 15vh;
 }
 
 ul{
     margin-top: 6vh;
     height: 6vh;
     list-style-type: none;
+    display: flex;
+    
 }
 
 li{
     display: inline;
+    
 }
 
 li a{
@@ -35,8 +51,7 @@ li a{
     margin-right: 3vw;
     color:black;
     padding: 10px;
-    font-family: "sans-serif";
-    font-size: 3vh;
+    font-size: 4vh;
     text-decoration: none;
 }
 
@@ -44,30 +59,34 @@ li a:hover{
     color: gray;
 }
 
+#user{
+    width: 2vw;
+    height: 5vh;
+}
+
 .conteudo-index{
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    margin: 1vw;
-}
-
-.conteudo-index .nome{
-    width: 50vw;
-    height: 25vh;
-    margin-right: 1vw;
-}
-
-.conteudo-index .textin{
-    width: 50vw;
-    height: 25vh;
-    margin-left: 1vw;
-    text-align: center;
-    border: solid black 3px;
-    border-radius: 12px;
     flex-direction: column;
 }
+
+.nome{
+    width: 100vw;
+    height: 18vh;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    
+    background-color: blanchedalmond;
+}
+
 
 .index-menu{
     width: 100vw;
     height: 15vh;
+    margin-top: 4vh;
     margin-bottom: 4vh;
     display: flex;
     justify-content: space-between;
@@ -78,19 +97,20 @@ li a:hover{
 
 .conteudo{
     height: 30vh;
-    
-    margin-bottom: 5.5vh;
-    margin-right: 0vw;
+    margin-bottom: 5vh;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+
 }
 
 .conteudo .livro{
     height: 30vh;
-    width: 11vw;
+    width: 10vw;
+    margin-left: 2vw;
     text-decoration: none;
     color: black;
     overflow: hidden;
+
 }
 
 .conteudo .livro:hover{
@@ -99,12 +119,13 @@ li a:hover{
 
 
 .conteudo .livro .img-home{
-    width: 11vw;
-    height: 31vh;
+    width: 10vw;
+    height: 30vh;
 }
 
 h4{
     margin-left: 1.5vw;
+    margin-right: 1.5vw;
     border-bottom:black solid 1px;
 }
 
@@ -181,7 +202,6 @@ h4:hover{
     height: 5vh;
     margin-top: 3vh;
     background-color: black;
-    font-family: sans-serif;
     color: white;  
     border-radius: 12px;
     border: solid black;
@@ -204,15 +224,29 @@ h4:hover{
     transition: opacity .2s;
 }
 
+.posts{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
 .comentarios{
-    background-color:green;
+    width: 30vw;
+    height: 15vh;
+    max-height: 80vh;
+    margin-bottom: 2vh;
+    border: solid black 2px;
+    border-radius: 12px;
+    padding: 1.5vh;
+
+    background-color: blanchedalmond;
 }
   
-  .nota:hover {
+.nota:hover{
     opacity: 1;
 }
   
-  .nota::-webkit-slider-thumb {
+.nota::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 2vw;
@@ -220,14 +254,14 @@ h4:hover{
     border-radius: 50%;
     background: black;
     cursor: pointer;
-  }
+}
   
-  .nota::-moz-range-thumb {
+.nota::-moz-range-thumb {
     width: 25vw;
     height: 25vh;
     border-radius: 50%;
     cursor: pointer;
-  }
+}
 
 
 /* ----- cadastro ----- */
@@ -255,10 +289,6 @@ h4:hover{
     margin-right: 25vw;
     position: relative;
     text-align: center;
-
-    /* border: double black 12px;
-    border-radius: 20px; */
-
 }
 
 .inputs{
@@ -268,7 +298,6 @@ h4:hover{
     width: 15vw;
     height: 5vh;
     background-color: white;
-    font-family: sans-serif;
     outline: none;
 }
 
@@ -276,11 +305,10 @@ h4:hover{
     width: 15vw;
     height: 5vh;
     background-color: black;
-    font-family: sans-serif;
     color: white;
     text-align: center;
     border-radius: 12px;
-    border: solid black;
+    border: none;
 }
 
 .submit:hover{

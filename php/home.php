@@ -19,17 +19,22 @@ $dados = mysqli_fetch_array($resultado);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type='text/css' media='screen' href='../css/css.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../imgs/livro3.png"/>
     <title> HOME </title>
 </head>
 
 <body>
-<div class='cabeçalho'>
-    <h1 class="titulo"> IF LEITURA </h1>
+<div class='nome'>
+    <h1 id = "red">I</h1> <h1 id = "green">F</h1> <h1 class = "titulo">leitura</h1> <br>
     <ul>
-    <li> <a href="home.php"> LIVROS </a> </li>
-    <li> <a href="logout.php">SAIR</a> </li>
-    <li> <a href=""><?php echo strtoupper($dados['nome']); ?></a>  </li>
+    <li> <a href="home.php"> livros </a> </li>
+    <li> <a href="logout.php">sair</a> </li>
+    <li> <a href="">|</a></li>
+    <img src="../imgs/user2.png" alt="" id="user">
+    <li> <a href=""><?php echo $dados['nome']; ?></a>  </li>
     </ul>
 </div>
 

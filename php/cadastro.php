@@ -24,17 +24,22 @@ if (isset($_POST['enviou'])){ // botão, existe?
 				$senha = md5($senha);
 				unset($senha2);
 				
-				$query = "select count(*) as total from usuario where email = '$email'";
+				$query = "SELECT COUNT(*) AS total FROM usuario WHERE email = '$email'";
 				$resultado = mysqli_query($conexao, $query);
 				$row = mysqli_fetch_assoc($resultado);
 
 				if ($row['total'] == 1) {
 					$_SESSION['usuario-existe'] = true;
-					$erros1[] = "Amor, você já está cadastrado(a)!";
+					$erros1[] = "ei, você já está cadastrado(a)!";
 				}
 				else{
-					$sql = "insert into usuario (nome, idade, email, senha, data) values ('$nome', '$idade', '$email', '$senha', NOW())";
-					if ($conexao->query($sql) === TRUE){
+					$sql1 = "INSERT INTO usuario (nome, idade, email, senha, data) VALUES ('$nome', '$idade', '$email', '$senha', NOW())";
+					$sql2 = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
+					if ($conexao->query($sql1) === TRUE){
+						//tentando resolver o problema da nome que não aparece depois que cadastra
+						$result = mysqli_query($conexao, $sql2);
+						$dados = mysqli_fetch_array($result);
+
 						$_SESSION['logado'] = true;
 						$_SESSION['id-usuario'] = $dados['id_usuario'];
 
@@ -45,7 +50,7 @@ if (isset($_POST['enviou'])){ // botão, existe?
 				}
 			}
 			else{
-				$erros1[] = "Põe uma senha maior!! No mínimo 6 caracteres :)";
+				$erros1[] = "põe uma senha maior!! no mínimo 6 caracteres :)";
 			}			
 
 		}
@@ -61,24 +66,27 @@ if (isset($_POST['enviou'])){ // botão, existe?
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/css.css'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" href="../imgs/livro3.png"/>
 	<title> CADASTRO </title>
 </head>
 
 <body>
-	<div class='cabeçalho'>
-    	<h1 class="titulo"> IF LEITURA </h1>
+	<div class='nome'>
+	<h1 id = "red">i</h1> <h1 id = "green">f</h1> <h1 class = "titulo">leitura</h1> <br>
     	<ul>
-    		<li> <a href="home.php"> LIVROS </a> </li>
-    		<li > <a href="cadastro.php"> CADASTRO </a> </li>
-    		<li> <a href="login.php"> LOGIN </a> </li>
-    		<li> <a href="logout.php">SAIR</a> </li>
+    		<li> <a href="home.php"> livros </a> </li>
+    		<li > <a href="cadastro.php"> cadastro </a> </li>
+    		<li> <a href="login.php"> login </a> </li>
+    		<li> <a href="logout.php"> sair </a> </li>
     	</ul>
 	</div>
 
 	<div class='form'>
 		<form method="POST" action="">            
-			<h2> Seja bem vindo(a)! Faça seu cadastro: </h2>
+			<h2> seja bem vindo(a)! faça seu cadastro: </h2>
 			<!-- value='-->
 			<input  type="text" name='nome' class='inputs' value="<?php if(isset( $_POST['nome'])){echo $_POST['nome'];}?>" placeholder='Seu nome'/> <br> <br>
 			<input type="number" name="idade" class='inputs' value="<?php if(isset( $_POST['nome'])){echo $_POST['nome'];}?>" placeholder='Sua idade'/> <br> <br>
@@ -86,7 +94,7 @@ if (isset($_POST['enviou'])){ // botão, existe?
 			<input  type="password" name="senha" class='inputs' placeholder='Sua senha'/> <br> <br>
 			<input  type="password" name="confirm" class='inputs'placeholder='Confirme sua senha'/> <br> <br>
 			<button type="submit" name="enviou" class="submit"> Entrar </button> <br> <br>
-			<p class=""> Já é cadastrado(a)? Faça <a href ="login.php">login.</a> </p>
+			<p> Já é cadastrado(a)? Faça <a href ="login.php">login.</a> </p>
 		</form>
 		<?php
             if (!empty($erros1)) {

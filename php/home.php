@@ -10,6 +10,7 @@ $id = $_SESSION['id-usuario'];
 $query = "SELECT * FROM usuario WHERE id_usuario = '$id'";
 $resultado = mysqli_query($conexao, $query);
 $dados = mysqli_fetch_array($resultado);
+
 ?> 
 
 <!DOCTYPE html>
@@ -23,12 +24,12 @@ $dados = mysqli_fetch_array($resultado);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../imgs/livro3.png"/>
-    <title> HOME </title>
+    <title> INÍCIO </title>
 </head>
 
 <body>
 <div class='nome'>
-    <h1 id = "red">I</h1> <h1 id = "green">F</h1> <h1 class = "titulo">leitura</h1> <br>
+    <h1 id="red"> i </h1> <h1 id="green"> f </h1> <h1 class="titulo"> leitura </h1> <br>
     <ul>
     <li> <a href="home.php"> livros </a> </li>
     <li> <a href="logout.php">sair</a> </li>

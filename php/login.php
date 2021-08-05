@@ -30,7 +30,14 @@ if (isset($_POST['butao'])) {
                 mysqli_close($conexao);
                 $_SESSION['logado'] = true;
                 $_SESSION['id-usuario'] = $dados['id_usuario'];
-                header('Location: home.php');
+
+                if ($dados['id_usuario'] != 26){
+                    header('Location:home.php');
+                }
+                else{
+                    header('Location: uploads.php');
+                }
+
             }
             else { // se não confere
                 $erros[] = "seu email e sua senha não conferem aqui! confira aí ;) </li>";

@@ -2,7 +2,6 @@
 *{
     margin: 0 auto;
     font-family: 'DM Sans', sans-serif;
-
 }
 
 .titulo{
@@ -25,7 +24,6 @@
 
 .subtitulo{
     color: black;
-    
 }
 
 #logo{
@@ -65,10 +63,12 @@ li a:hover{
 }
 
 .conteudo-index{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content:flex-start;
+    background-color: rgb(252, 232, 204);
 }
 
 .nome{
@@ -79,18 +79,31 @@ li a:hover{
     justify-content: center;
     align-items: baseline;
     
-    background-color: blanchedalmond;
+    background-color: rgb(252, 232, 204);
 }
 
 
 .index-menu{
     width: 100vw;
     height: 15vh;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     border-bottom: black 1.5px solid;
+}
+
+.index-decoracao{
+    height: 64.5vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color:rgb(252, 232, 204);
+}
+
+.imagens{
+    width: 15vw;
+    height: 38vh;
+    margin: 3vh;
 }
 
 /* ----- home ----- */
@@ -131,6 +144,7 @@ h4{
 
 h4:hover{
     opacity: .5;
+
 }
 
 /* ----- páginas dos livros ----- */
@@ -142,7 +156,7 @@ h4:hover{
 
 .livro-pag .conteudo-livro{
     width: 25vw;
-    height: 74vh;
+    height: 80vh;
     margin-top: 3vh;
     margin-bottom: 3vh;
     display: flex;
@@ -151,15 +165,17 @@ h4:hover{
 }
 
 .livro-pag .conteudo-livro .sinopse{
-    width: 20vw;
+    width: 27vw;
     height: 23vh;
-    margin-top: 2vh;
+    margin-top: 1vh;
     margin-bottom: 2vh;
-    border: 1px black solid;
-    border-radius: 20px;
+    /*border: 1px black solid;
+    border-radius: 20px;*/
     color: gray;
     text-indent: 1vw;
-    padding-top: 1.5vh;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 1.5vh;
 }
 
 .livro-pag .conteudo-livro .capa-livro{
@@ -179,12 +195,13 @@ h4:hover{
 
 .livro-pag .resenha .resenha-input{
     width: 20vw;
-    height: 40vh;
+    height: 35vh;
     border: 1px black solid;
     border-radius: 20px;
     color: gray;
     text-indent: 1vw;
-    padding-top: 1.5vh;
+    padding: 2vh;
+    
 }
 
 .livro-pag .resenha .resenha-input:focus{
@@ -231,15 +248,13 @@ h4:hover{
 }
 
 .comentarios{
-    width: 30vw;
+    width: 90vw;
     height: 15vh;
-    max-height: 80vh;
+    overflow: auto;
     margin-bottom: 2vh;
-    border: solid black 2px;
-    border-radius: 12px;
     padding: 1.5vh;
 
-    background-color: blanchedalmond;
+    box-shadow: 3px 3px 3px rgb(252, 232, 204);
 }
   
 .nota:hover{

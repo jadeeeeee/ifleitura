@@ -28,10 +28,12 @@
             </ul>
         </div>
 
-        <!-- <div class='textin'>
-            <h2> sobre o if leitura </h2>
-            <p> olá, seja bem vindo(a) ao IF Leitura! Essa plataforma tem o objetivo de servir como um clube de leitura para os estudantes leitores do IF Baiano Campus Guanambi. <br> bla bla bla bla bla bla bla</p>
-        </div> -->
+        <div class='index-decoracao'>
+            <img src="imgs/img7.jpg" class="imagens">
+            <img src="imgs/img8.png" class="imagens">
+            <img src="imgs/img9.png" class="imagens">
+            <p> ler é sempre um ato de poder. </p>
+        </div>
     </div>
 </body>
 </html>

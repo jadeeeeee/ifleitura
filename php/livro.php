@@ -43,14 +43,14 @@ $dados_livro = mysqli_fetch_array($result);
     <li> <a href="logout.php"> sair </a> </li>
     <li> <a href="">|</a></li>
     <img src="../imgs/user2.png" alt="" id="user">
-    <li> <a href=""><?php echo strtolower($dados['nome']); ?></a>  </li>
+    <li> <a href=""><?php echo $dados['nome']; ?></a>  </li>
     </ul>
 </div>
 
 <div class="livro-pag">
 
     <div class="conteudo-livro">
-        <h2> <?php echo strtolower($dados_livro['titulo']); ?> </h2>
+        <h2> <?php echo $dados_livro['titulo']; ?> </h2>
         <h3> <?php echo $dados_livro['autor']; ?> </h3> <br>
         <?php  $imgURL = 'upload/'.$dados_livro['capa']; ?>
         <img src="<?php echo $imgURL;?>" alt="<?php echo $dados_livro['titulo']; ?>" class="capa-livro"/> <br>
@@ -61,7 +61,7 @@ $dados_livro = mysqli_fetch_array($result);
     <div class="resenha">
         <h2> adicione sua resenha/avaliação sobre essa obra! </h2> <br>
         <form method="POST" action="">
-            <textarea name=resenha class="resenha-input" placeholder="Escreva aqui..."></textarea><br>
+            <textarea name=resenha class="resenha-input" placeholder="Escreva aqui... Máximo 500 caracteres." maxlength="500"></textarea><br>
             <label for="nota"> classifique a obra de 1 a 10: </label>
             <input type="range" name="nota" class="nota" min="1" max="10"> <br>
             <button type="submit" name="Enviar" class="submit-resenha"> enviar </button><br>
@@ -73,7 +73,6 @@ $dados_livro = mysqli_fetch_array($result);
 <h4> resenhas e notas </h4> <br>
 
 <div class="posts">
-
     <?php
         $query = "SELECT  titulo, autor, ano_publi, id, sinopse, capa FROM livro WHERE origem = 'Internacional'";
         $executar = mysqli_query($conexao, $query);
@@ -94,7 +93,7 @@ $dados_livro = mysqli_fetch_array($result);
         $executar = mysqli_query($conexao, $query1);
 
         while($exibir = mysqli_fetch_array($executar)){
-            echo "<div class='comentarios'> Postado por: ", $exibir['nome'], "<br> Nota: ", $exibir['nota'], "<br> Resenha: ", $exibir['resenha'],"</br> Data: ", $exibir['data'],"</div> <br>";
+            echo "<div class='comentarios'> Postado por: ", $exibir['nome'], "<br> Nota: ", $exibir['nota'], "</br> Data: ", $exibir['data'], "<br> Resenha: ", $exibir['resenha'],"</div> <br>";
         }
     ?>
 </div>

@@ -11,7 +11,7 @@ if (isset($_POST['enviou'])){ // botão, existe?
 	$senha2 = mysqli_real_escape_string($conexao, $_POST['confirm']);
 
 	if(empty($_POST['nome']) || empty($_POST['email'])){ 
-        $erros1[] = "<li> Preencha os campos! </li>"; 
+        $erros1[] = "Preencha os campos!"; 
 	}
 	else{
 		// confirmação e verificação da senha

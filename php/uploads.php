@@ -121,7 +121,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
             $conexao->query($insert);
 
             if($insert){
-                $erro = "A imagem '$capa' e o resto foram enviados com sucesso.";
+                $erro = "Livro '$titulo', de '$autor' foi adicionado a base de dados com sucesso.";
             }
             else { echo "não inseriu";}
         }

@@ -73,7 +73,7 @@ li a:hover{
 
 .nome{
     width: 100vw;
-    height: 18vh;
+    height: 17vh;
     margin-bottom: 2vh;
     display: flex;
     justify-content: center;
@@ -92,7 +92,7 @@ li a:hover{
 }
 
 .index-decoracao{
-    height: 64.5vh;
+    height: 65.5vh;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -109,10 +109,13 @@ li a:hover{
 /* ----- home ----- */
 
 .conteudo{
-    height: 30vh;
-    margin-bottom: 5vh;
+    height: 32vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     display: flex;
-    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
 
 }
 
@@ -120,14 +123,12 @@ li a:hover{
     height: 30vh;
     width: 10vw;
     margin-left: 2vw;
+    margin-right: 2vw;
     text-decoration: none;
-    color: black;
-    overflow: hidden;
-
 }
 
 .conteudo .livro:hover{
-    border: 1px groove grey;
+    border: 1px groove rgb(252, 232, 204);
 }
 
 
@@ -139,7 +140,7 @@ li a:hover{
 h4{
     margin-left: 1.5vw;
     margin-right: 1.5vw;
-    border-bottom:black solid 1px;
+    border-bottom: solid black 1px;
 }
 
 h4:hover{
@@ -331,21 +332,19 @@ h4:hover{
     cursor: pointer;
 }
 
-::-webkit-scrollbar-track
-{
+::-webkit-scrollbar-track {
     border: 5px solid var(--bg);
     border-color: transparent;
     background-color: var(--bg);
 }
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
     width: 5px;
-    background-color: #dfe6e9;
+    height: 5px;
+    background-color: white;
 }
 
-::-webkit-scrollbar-thumb
-{
-    background-color: var(--acc);
+::-webkit-scrollbar-thumb{
+    background-color: rgb(252, 232, 204);
     border-radius: 10px;
 }

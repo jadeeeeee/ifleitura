@@ -40,8 +40,8 @@ if ($dados['id_usuario'] != 26){
             text-align: center;
         }
 
-        input[type="file"] {
-            display: none;
+        /*input[type="file"] {
+            display: none;*/
         }
         #file{
             width: 15vw;
@@ -82,7 +82,7 @@ if ($dados['id_usuario'] != 26){
             <tr><td><label for="id"> id </label></td><td><input type="number" name="id" class='inputs'></td></tr>
             <tr><td><label for="sinopse"> sinopse </label></td><td><input type="text" name="sinopse" class='inputs'></td></tr>
             <tr><td><label for="origem "> origem </label></td><td><input type="radio" name="origem" value="Nacional" checked> Nacional <input type="radio" name="origem" value="Internacional"> Internacional</td></tr>
-            <tr><td>imagem de capa:</td><td><label for="file" id="file"> Adicionar capa </label></td><td><input type="file" name="file"></td></tr>
+            <tr><td>imagem de capa:</td><!--<td><label for="file" id="file"> Adicionar capa </label></td>--><td><input type="file" name="file"></td></tr>
         </table>
         <br>
         <input type="submit" name="submit" value="Upload" class='submit'>

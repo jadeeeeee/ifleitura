@@ -39,7 +39,7 @@ $dados = mysqli_fetch_array($resultado);
     </ul>
 </div>
 
-<h4>NACIONAIS</h4> <br>
+<h4>NACIONAIS ➜</h4>
 <div class='conteudo'>
     <?php //carregar dados do bd e mostrar - consulta
         $query = "SELECT  titulo, autor, ano_publi, id, sinopse, capa FROM livro WHERE origem = 'Nacional'";
@@ -53,7 +53,7 @@ $dados = mysqli_fetch_array($resultado);
     ?>
 </div>
 
-<h4>INTERNACIONAIS</h4> <br>
+<h4>INTERNACIONAIS ➜</h4>
 <div class='conteudo'>
     <?php //mesma coisa
         $query = "SELECT  titulo, autor, ano_publi, id, sinopse, capa FROM livro WHERE origem = 'Internacional'";
@@ -65,7 +65,6 @@ $dados = mysqli_fetch_array($resultado);
         }
     ?>
 </div>
-<br> <br> <br> <br> <br> <br> <br> <br>
 
 </body>
 </html>

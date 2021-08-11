@@ -74,7 +74,7 @@ if (isset($_POST['butao'])) {
         <li> <a href="home.php"> livros </a> </li>
         <li > <a href="cadastro.php"> cadastro </a> </li>
         <li> <a href="login.php"> login </a> </li>
-        <li> <a href="logout.php"> sair </a> </li>
+        <li> <a href="logout.php"> voltar </a> </li>
         </ul>
     </div>
 

@@ -33,10 +33,11 @@ if (isset($_POST['enviou'])){ // botão, existe?
 					$erros1[] = "ei, você já está cadastrado(a)!";
 				}
 				else{
-					$sql1 = "INSERT INTO usuario (nome, idade, email, senha, data) VALUES ('$nome', '$idade', '$email', '$senha', NOW())";
+					$sql1 = "INSERT INTO usuario (nome, idade, email, senha, data) 
+					VALUES ('$nome', '$idade', '$email', '$senha', NOW())";
 					$sql2 = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
+
 					if ($conexao->query($sql1) === TRUE){
-						//tentando resolver o problema da nome que não aparece depois que cadastra
 						$result = mysqli_query($conexao, $sql2);
 						$dados = mysqli_fetch_array($result);
 
@@ -80,21 +81,21 @@ if (isset($_POST['enviou'])){ // botão, existe?
     		<li> <a href="home.php"> livros </a> </li>
     		<li > <a href="cadastro.php"> cadastro </a> </li>
     		<li> <a href="login.php"> login </a> </li>
-    		<li> <a href="logout.php"> sair </a> </li>
+    		<li> <a href="logout.php"> voltar </a> </li>
     	</ul>
 	</div>
 
 	<div class='form'>
-		<form method="POST" action="">            
+		<form method="POST" action="">  <br> <br>         
 			<h2> seja bem vindo(a)! faça seu cadastro: </h2>
 			<!-- value='-->
 			<input  type="text" name='nome' class='inputs' value="<?php if(isset( $_POST['nome'])){echo $_POST['nome'];}?>" placeholder='Seu nome'/> <br> <br>
-			<input type="number" name="idade" class='inputs' value="<?php if(isset( $_POST['nome'])){echo $_POST['nome'];}?>" placeholder='Sua idade'/> <br> <br>
-			<input  type="email" name="email" class='inputs' value="<?php if(isset( $_POST['nome'])){echo $_POST['nome'];}?>" placeholder='Seu e-mail'/> <br> <br>
+			<input type="number" name="idade" class='inputs' value="<?php if(isset( $_POST['idade'])){echo $_POST['idade'];}?>" placeholder='Sua idade'/> <br> <br>
+			<input  type="email" name="email" class='inputs' value="<?php if(isset( $_POST['email'])){echo $_POST['email'];}?>" placeholder='Seu e-mail'/> <br> <br>
 			<input  type="password" name="senha" class='inputs' placeholder='Sua senha'/> <br> <br>
 			<input  type="password" name="confirm" class='inputs'placeholder='Confirme sua senha'/> <br> <br>
 			<button type="submit" name="enviou" class="submit"> Entrar </button> <br> <br>
-			<p> Já é cadastrado(a)? Faça <a href ="login.php">login.</a> </p>
+			<p> Já é cadastrado(a)? Faça <a href ="login.php">login.</a> </p> <br>
 		</form>
 		<?php
             if (!empty($erros1)) {

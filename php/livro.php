@@ -50,7 +50,7 @@ $dados_livro = mysqli_fetch_array($result);
 <div class="livro-pag">
 
     <div class="conteudo-livro">
-        <h2> <?php echo $dados_livro['titulo']; ?> </h2>
+        <h2> <?php echo $dados_livro['titulo'], " (", $dados_livro['ano_publi'], ")"; ?> </h2>
         <h3> <?php echo $dados_livro['autor']; ?> </h3> <br>
         <?php  $imgURL = 'upload/'.$dados_livro['capa']; ?>
         <img src="<?php echo $imgURL;?>" alt="<?php echo $dados_livro['titulo']; ?>" class="capa-livro"/> <br>
@@ -61,7 +61,7 @@ $dados_livro = mysqli_fetch_array($result);
     <div class="resenha">
         <h2> adicione sua resenha/avaliação sobre essa obra! </h2> <br>
         <form method="POST" action="">
-            <textarea name=resenha class="resenha-input" placeholder="Escreva aqui... Máximo 500 caracteres." maxlength="500"></textarea><br>
+            <textarea name=resenha class="resenha-input" placeholder="Escreva aqui..." maxlength="1000"></textarea><br>
             <label for="nota"> classifique a obra de 1 a 10: </label>
             <input type="range" name="nota" class="nota" min="1" max="10"> <br>
             <button type="submit" name="Enviar" class="submit-resenha"> enviar </button><br>
@@ -74,16 +74,14 @@ $dados_livro = mysqli_fetch_array($result);
 
 <div class="posts">
     <?php
-        $query = "SELECT  titulo, autor, ano_publi, id, sinopse, capa FROM livro WHERE origem = 'Internacional'";
-        $executar = mysqli_query($conexao, $query);
-
         //form e comentarios
         //insere no bd
         if (!empty($_POST['resenha'])){
             $resenha = mysqli_real_escape_string($conexao, $_POST['resenha']);
             $nota = mysqli_real_escape_string($conexao, $_POST['nota']);
 
-            $query = "INSERT INTO avaliacao(resenha, nota, data, id_livro, id_usuario) VALUES ('$resenha', '$nota', NOW(), '$id_livro', '$id')";
+            $query = "INSERT INTO avaliacao(resenha, nota, data, id_livro, id_usuario) 
+            VALUES ('$resenha', '$nota', NOW(), '$id_livro', '$id')";
             mysqli_query($conexao, $query);
         }
 
@@ -93,7 +91,8 @@ $dados_livro = mysqli_fetch_array($result);
         $executar = mysqli_query($conexao, $query1);
 
         while($exibir = mysqli_fetch_array($executar)){
-            echo "<div class='comentarios'> Postado por: ", $exibir['nome'], "<br> Nota: ", $exibir['nota'], "</br> Data: ", $exibir['data'], "<br> Resenha: ", $exibir['resenha'],"</div> <br>";
+            echo "<div class='comentarios'> Postado por: ", $exibir['nome'], "<br> Nota: ", $exibir['nota'], 
+            "</br> Data: ", $exibir['data'], "<br> Resenha: ", $exibir['resenha'],"</div> <br>";
         }
     ?>
 </div>

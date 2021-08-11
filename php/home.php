@@ -45,10 +45,10 @@ $dados = mysqli_fetch_array($resultado);
         $query = "SELECT  titulo, autor, ano_publi, id, sinopse, capa FROM livro WHERE origem = 'Nacional'";
         $executar = mysqli_query($conexao, $query);
         
-        // exibição - assoc ou array? os dois dão certo
         while($exibir = mysqli_fetch_array($executar)){ 
             $imgURL = 'upload/'.$exibir['capa']; //faz o caminho da imagem de capa
-            echo "<div class='livro'> <a href='livro.php?id=", $exibir['id'],"'> <img src='", $imgURL, "' alt='", $exibir['titulo'], "' class='img-home'> </a> </div>";
+            echo "<div class='livro'> <a href='livro.php?id=", $exibir['id'],"'>
+            <img src='", $imgURL, "' alt='", $exibir['titulo'], "' class='img-home'> </a> </div>";
         }
     ?>
 </div>

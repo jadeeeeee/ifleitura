@@ -111,25 +111,21 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
     $origem = mysqli_real_escape_string($conexao, $_POST['origem']);
 
     // formatos permitidos
-    $permitipos = array('jpg','png','jpeg','gif','pdf');
+
+    $permitipos = array('jpg','png','jpeg');
 
     if(in_array($tipoimg, $permitipos)){
         // salvar imagem
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $caminho)){
             // inserir no banco
-            $insert = "INSERT INTO livro (titulo, autor, ano_publi, id, sinopse, origem, capa) VALUES ('$titulo', '$autor', '$ano', '$id', '$sinopse', '$origem', '$capa')";
+            $insert = "INSERT INTO livro (titulo, autor, ano_publi, id, sinopse, origem, capa) 
+            VALUES ('$titulo', '$autor', '$ano', '$id', '$sinopse', '$origem', '$capa')";
             $conexao->query($insert);
 
             if($insert){
-                $erro = "Livro '$titulo', de '$autor' foi adicionado a base de dados com sucesso.";
+                echo "Livro '$titulo', de '$autor' foi adicionado a base de dados com sucesso.";
             }
-            else { echo "não inseriu";}
         }
-        else{echo "não salvou";}
     }
-    else{echo "segundo if";}
 }
-// Display status message
-echo $erro;
-
 ?>

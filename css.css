@@ -1,0 +1,351 @@
+/* ----- index ----- */
+*{
+    margin: 0 auto;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.titulo{
+    color: black;
+    font-size: 14vh;
+    margin-left: 1vw;
+}
+
+#red{
+    color:red;
+    font-size: 15vh;
+    margin-right: 0vw;
+}
+#green{
+    color: green;
+    font-size: 15vh;
+    margin-left: 0vw;
+    margin-right: 0vw;
+}
+
+.subtitulo{
+    color: black;
+}
+
+#logo{
+    width: 10vw;
+    height: 15vh;
+}
+
+ul{
+    margin-top: 6vh;
+    height: 6vh;
+    list-style-type: none;
+    display: flex;
+    
+}
+
+li{
+    display: inline;
+    
+}
+
+li a{
+    display: inline;
+    margin-right: 3vw;
+    color:black;
+    padding: 10px;
+    font-size: 4vh;
+    text-decoration: none;
+}
+
+li a:hover{
+    color: gray;
+}
+
+#user{
+    width: 2vw;
+    height: 5vh;
+}
+
+
+.conteudo-index{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    background-color: rgb(252, 232, 204);
+}
+
+.nome{
+    width: 100vw;
+    height: 17vh;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    
+    background-color: rgb(252, 232, 204);
+}
+
+
+.index-menu{
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: black 1.5px solid;
+}
+
+.index-decoracao{
+    height: 65.5vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color:rgb(252, 232, 204);
+}
+
+.imagens{
+    width: 15vw;
+    height: 38vh;
+    margin: 3vh;
+}
+
+/* ----- home ----- */
+
+.conteudo{
+    height: 32vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    align-items: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+}
+
+.conteudo .livro{
+    height: 30vh;
+    width: 10vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    text-decoration: none;
+}
+
+.conteudo .livro:hover{
+    border: 1px groove rgb(252, 232, 204);
+}
+
+
+.conteudo .livro .img-home{
+    width: 10vw;
+    height: 30vh;
+}
+
+h4{
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    border-bottom: solid black 1px;
+}
+
+h4:hover{
+    opacity: .5;
+
+}
+
+/* ----- páginas dos livros ----- */
+
+.livro-pag{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.livro-pag .conteudo-livro{
+    width: 25vw;
+    height: 80vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.livro-pag .conteudo-livro .sinopse{
+    width: 27vw;
+    height: 23vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    /*border: 1px black solid;
+    border-radius: 20px;*/
+    color: gray;
+    text-indent: 1vw;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 1.5vh;
+}
+
+.livro-pag .conteudo-livro .capa-livro{
+    width: 11vw;
+    height: 31vh;
+}
+
+.livro-pag .resenha{
+    width: 38vw;
+    height: 74vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.livro-pag .resenha .resenha-input{
+    width: 20vw;
+    height: 35vh;
+    border: 1px black solid;
+    border-radius: 20px;
+    color: gray;
+    text-indent: 1vw;
+    padding: 2vh;
+    
+}
+
+.livro-pag .resenha .resenha-input:focus{
+    outline: none;
+    border: 1px solid gray;
+}
+
+.livro-pag .resenha .resenha-input::placeholder{
+    text-align: start;
+    margin-top: 0vh;
+}
+
+.livro-pag .resenha .submit-resenha{
+    width: 20vw;
+    height: 5vh;
+    margin-top: 3vh;
+    background-color: black;
+    color: white;  
+    border-radius: 12px;
+    border: solid black;
+}
+
+.livro-pag .resenha .submit-resenha:hover{
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+.livro-pag .resenha .nota {
+    appearance: none;
+    width: 10vw;
+    height: 2vh;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    transition: .2s;
+    transition: opacity .2s;
+}
+
+.posts{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.comentarios{
+    width: 90vw;
+    height: 15vh;
+    overflow: auto;
+    margin-bottom: 2vh;
+    padding: 1.5vh;
+
+    box-shadow: 3px 3px 3px rgb(252, 232, 204);
+}
+  
+.nota:hover{
+    opacity: 1;
+}
+  
+.nota::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2vw;
+    height: 4vh;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+}
+  
+.nota::-moz-range-thumb {
+    width: 25vw;
+    height: 25vh;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+/* ----- cadastro ----- */
+.form{
+    width: 30vw;
+    height: 60vh;
+    margin-left: 35vw;
+    margin-right: 35vw;
+    border: .9 double black 12px;
+    border-radius: 20px;
+    text-align: center;
+ 
+}
+
+
+
+/* ----- login ----- */
+
+.login{
+    width: 50vw;
+    height: 45vh;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    position: relative;
+    text-align: center;
+}
+
+.inputs{
+    text-align: center;
+    border-radius: 12px;
+    border: solid black;
+    width: 15vw;
+    height: 5vh;
+    background-color: white;
+    outline: none;
+}
+
+.submit{
+    width: 15vw;
+    height: 5vh;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 12px;
+    border: none;
+}
+
+.submit:hover{
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    border: 5px solid var(--bg);
+    border-color: transparent;
+    background-color: var(--bg);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(252, 232, 204);
+    border-radius: 10px;
+}
